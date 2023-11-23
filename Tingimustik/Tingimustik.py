@@ -174,3 +174,39 @@ else:
     print("Täna pole teie aastapäev.")
 
 #12 ülesanne
+toote_hind = float(input("Sisesta toote hind eurodes: "))
+
+soodus_10 = 0.10
+soodus_20 = 0.20
+
+if toote_hind <= 10:
+    lõplik_hind = toote_hind * (1 - soodus_10)
+else:
+    lõplik_hind = toote_hind * (1 - soodus_20)
+
+print(f"Toote lõpphind: {lõplik_hind} eurot.")
+
+#13 ülesanne
+sugu = input("Sisestage oma sugu (m/n): ").lower()
+
+if sugu == 'm':
+    vanus = int(input("Sisesta oma vanus: "))
+    if 16 <= vanus <= 18:
+        print("Sul on õigus jalgpallimeeskonnaga liituda.")
+    else:
+        print("Vabandust, sa pole õiges vanuses.")
+elif sugu == 'n':
+    print("Kahjuks võtab meeskond praegu vastu ainult mehi.")
+else:
+    print("Viga: sisestage kehtiv sugu (m/n).")
+
+#14 ülesanne
+inimeste_arv = int(input("Sisestage inimeste koguarv: "))
+bussi_suurus = int(input("Sisestage bussi suurus (kohtade arv): "))
+
+busside_arv = inimeste_arv // bussi_suurus
+ülejäänud_inimesed = inimeste_arv % bussi_suurus
+
+print(f"{inimeste_arv} inimese vedamiseks {bussi_suurus} istekohaga bussides:")
+print(f"Vajalik on {busside_arv} bussi(t).")
+print(f"Viimases bussis on {ülejäänud_inimesed} inimest.")
